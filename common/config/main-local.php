@@ -4,8 +4,8 @@ return [
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=outlook',
-            'username' => 'root',
-            'password' => 'root',
+            'username' => 'develop',
+            'password' => 'joyje2013!',
             'charset' => 'utf8',
         ],
         'mailer' => [
