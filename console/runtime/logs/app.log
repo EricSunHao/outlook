@@ -1,0 +1,1985 @@
+2018-05-22 03:49:40 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'develop', 'joyje2013!', NULL)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-05-22 03:49:40 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.QpKhbFe2Ca/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.omPbL7Oq6w/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1526960980.609
+    'REQUEST_TIME' => 1526960980
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-05-22 03:53:46 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'develop', 'joyje2013!', NULL)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-05-22 03:53:45 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.QpKhbFe2Ca/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.omPbL7Oq6w/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1526961225.8028
+    'REQUEST_TIME' => 1526961225
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-05-22 03:59:57 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-05-22 03:59:57 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.QpKhbFe2Ca/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.omPbL7Oq6w/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1526961597.3202
+    'REQUEST_TIME' => 1526961597
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-05-22 04:00:00 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-05-22 04:00:00 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.QpKhbFe2Ca/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.omPbL7Oq6w/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1526961600.0097
+    'REQUEST_TIME' => 1526961600
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-05-22 04:04:48 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-05-22 04:04:48 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.QpKhbFe2Ca/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.omPbL7Oq6w/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1526961888.79
+    'REQUEST_TIME' => 1526961888
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-05-22 04:04:50 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(253): yii\db\Connection->getSlavePdo()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1143): yii\db\Command->prepare(true)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(312): yii\db\Command->queryAll()
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#17 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-05-22 04:04:50 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.QpKhbFe2Ca/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.omPbL7Oq6w/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1526961890.8084
+    'REQUEST_TIME' => 1526961890
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-05-24 05:03:38 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'outlook.auth_assignment' doesn't exist' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('ALTER TABLE `au...')
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Migration.php(495): yii\db\Command->execute()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/rbac/migrations/m170907_052038_rbac_add_index_on_auth_assignment_user_id.php(45): yii\db\Migration->createIndex('auth_assignment...', '{{%auth_assignm...', 'user_id')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m170907_052038_rbac_add_index_on_auth_assignment_user_id->up()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m170907_052038_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'outlook.auth_assignment' doesn't exist
+The SQL being executed was: ALTER TABLE `auth_assignment` ADD INDEX `auth_assignment_user_id_idx` (`user_id`)' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'ALTER TABLE `au...')
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('ALTER TABLE `au...')
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Migration.php(495): yii\db\Command->execute()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/rbac/migrations/m170907_052038_rbac_add_index_on_auth_assignment_user_id.php(45): yii\db\Migration->createIndex('auth_assignment...', '{{%auth_assignm...', 'user_id')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m170907_052038_rbac_add_index_on_auth_assignment_user_id->up()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m170907_052038_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#15 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'outlook.auth_assignment' doesn't exist
+)
+
+2018-05-24 05:03:32 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527131012.58
+    'REQUEST_TIME' => 1527131012
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@yii/rbac/migrations'
+    ]
+    'argc' => 3
+]
+2018-05-24 05:05:03 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'outlook.auth_assignment' doesn't exist' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('ALTER TABLE `au...')
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Migration.php(495): yii\db\Command->execute()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/rbac/migrations/m170907_052038_rbac_add_index_on_auth_assignment_user_id.php(45): yii\db\Migration->createIndex('auth_assignment...', '{{%auth_assignm...', 'user_id')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m170907_052038_rbac_add_index_on_auth_assignment_user_id->up()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m170907_052038_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'outlook.auth_assignment' doesn't exist
+The SQL being executed was: ALTER TABLE `auth_assignment` ADD INDEX `auth_assignment_user_id_idx` (`user_id`)' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'ALTER TABLE `au...')
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('ALTER TABLE `au...')
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/db/Migration.php(495): yii\db\Command->execute()
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/rbac/migrations/m170907_052038_rbac_add_index_on_auth_assignment_user_id.php(45): yii\db\Migration->createIndex('auth_assignment...', '{{%auth_assignm...', 'user_id')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(725): m170907_052038_rbac_add_index_on_auth_assignment_user_id->up()
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m170907_052038_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#11 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#15 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'outlook.auth_assignment' doesn't exist
+)
+
+2018-05-24 05:04:51 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527131091.75
+    'REQUEST_TIME' => 1527131091
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@yii/rbac/migrations'
+    ]
+    'argc' => 3
+]
+2018-05-24 10:54:31 [-][-][-][error][yii\console\UnknownCommandException] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: hello/' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('', Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('', Array)
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello', Array)
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello', Array)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#5 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#6 {main}
+
+Next exception 'yii\console\UnknownCommandException' with message 'Unknown command "hello".' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello', Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#3 {main}
+2018-05-24 10:54:31 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527152071.92
+    'REQUEST_TIME' => 1527152071
+    'argv' => [
+        0 => './yii'
+        1 => 'hello'
+    ]
+    'argc' => 2
+]
+2018-05-24 10:54:44 [-][-][-][error][yii\console\UnknownCommandException] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: hello/index' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Controller.php(148): yii\base\Controller->runAction('index', Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(528): yii\console\Controller->runAction('index', Array)
+#2 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#3 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#5 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#6 {main}
+
+Next exception 'yii\console\UnknownCommandException' with message 'Unknown command "hello/index".' in /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#3 {main}
+2018-05-24 10:54:44 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527152084.25
+    'REQUEST_TIME' => 1527152084
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+    ]
+    'argc' => 2
+]
+2018-05-24 10:58:21 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/list')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/list', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/list', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 10:58:21 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527152301.94
+    'REQUEST_TIME' => 1527152301
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/list'
+    ]
+    'argc' => 2
+]
+2018-05-24 10:58:31 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/list')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/list', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/list', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 10:58:31 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527152311.82
+    'REQUEST_TIME' => 1527152311
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/list'
+    ]
+    'argc' => 2
+]
+2018-05-24 11:00:06 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:00:06 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527152406.33
+    'REQUEST_TIME' => 1527152406
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/'
+    ]
+    'argc' => 2
+]
+2018-05-24 11:00:09 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:00:09 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527152409.53
+    'REQUEST_TIME' => 1527152409
+    'argv' => [
+        0 => './yii'
+        1 => 'hello'
+    ]
+    'argc' => 2
+]
+2018-05-24 11:12:58 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:12:58 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153178.06
+    'REQUEST_TIME' => 1527153178
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+    ]
+    'argc' => 2
+]
+2018-05-24 11:13:07 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:07 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153187.04
+    'REQUEST_TIME' => 1527153187
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:11 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:11 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153191.27
+    'REQUEST_TIME' => 1527153191
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:52 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:52 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153232.51
+    'REQUEST_TIME' => 1527153232
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:53 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:53 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153233.62
+    'REQUEST_TIME' => 1527153233
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:54 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:54 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153234.35
+    'REQUEST_TIME' => 1527153234
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:55 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:55 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153235.06
+    'REQUEST_TIME' => 1527153235
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:55 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:55 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153235.78
+    'REQUEST_TIME' => 1527153235
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:56 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:56 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153236.52
+    'REQUEST_TIME' => 1527153236
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:13:58 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:13:58 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153238.03
+    'REQUEST_TIME' => 1527153238
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '--r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:14:36 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:14:36 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153276.84
+    'REQUEST_TIME' => 1527153276
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:14:39 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:14:39 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153279.5
+    'REQUEST_TIME' => 1527153279
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:15:40 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:15:40 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153340.08
+    'REQUEST_TIME' => 1527153340
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:15:41 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:15:41 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153341.34
+    'REQUEST_TIME' => 1527153341
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:15:42 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:15:42 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153342.28
+    'REQUEST_TIME' => 1527153342
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:15:43 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:15:43 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153343.15
+    'REQUEST_TIME' => 1527153343
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:15:43 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:15:43 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153343.77
+    'REQUEST_TIME' => 1527153343
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
+2018-05-24 11:15:45 [-][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Declaration of console\controllers\HelloController::options() should be compatible with yii\console\Controller::options($actionID)' in /Users/dyl/svn/outlook/console/controllers/HelloController.php:7
+Stack trace:
+#0 /Users/dyl/svn/outlook/console/controllers/HelloController.php(7): yii\base\ErrorHandler->handleError(2048, 'Declaration of ...', '/Users/dyl/svn/...', 7, Array)
+#1 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/BaseYii.php(293): include('/Users/dyl/svn/...')
+#2 [internal function]: yii\BaseYii::autoload('console\\control...')
+#3 [internal function]: spl_autoload_call('console\\control...')
+#4 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(637): class_exists('console\\control...')
+#5 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('hello')
+#6 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('hello/index')
+#7 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('hello/index', Array)
+#8 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('hello/index', Array)
+#9 /Users/dyl/svn/outlook/vendor/yiisoft/yii2/base/Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Users/dyl/svn/outlook/yii(23): yii\base\Application->run()
+#11 {main}
+2018-05-24 11:15:45 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'TMPDIR' => '/var/folders/v1/dk2w6m0d5rvcs468yy43yh5w0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.rTgYRNDfqn/Render'
+    'USER' => 'dyl'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.SJISdKz5wK/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Users/dyl/svn/outlook'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/dyl'
+    'LOGNAME' => 'dyl'
+    'LC_CTYPE' => 'zh_CN.UTF-8'
+    '_' => './yii'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1527153345.25
+    'REQUEST_TIME' => 1527153345
+    'argv' => [
+        0 => './yii'
+        1 => 'hello/index'
+        2 => '-r=1'
+    ]
+    'argc' => 3
+]
