@@ -36,6 +36,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
+        ['label' => '分类管理', 'url' => ['/category/index']],
         ['label' => '文章管理', 'url' => ['/post/index']],
         ['label' => '教授信息', 'url' => ['/professor/index']],
         ['label' => '大学信息', 'url' => ['/university/index']],
