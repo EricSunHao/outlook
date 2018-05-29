@@ -134,6 +134,7 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
 
         $this->setCookieParamsInternal();
 
+        ini_set("session.save_path", "/path/to/tmp");
         YII_DEBUG ? session_start() : @session_start();
 
         if ($this->getIsActive()) {
