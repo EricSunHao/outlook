@@ -3,7 +3,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=outlook',
+            'dsn' => 'mysql:host=localhost;dbname=outlook',
             'username' => 'develop',
             'password' => 'joyje2013!',
             'charset' => 'utf8',
