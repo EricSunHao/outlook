@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="52c1e754-13dd-4cfc-9c45-db88b3b4a450" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/backend/runtime/debug/index.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/runtime/debug/index.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,7 +44,7 @@
       <file leaf-file-name="Session.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
+            <state relative-caret-position="1268">
               <caret line="128" column="35" lean-forward="true" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
             </state>
           </provider>
@@ -250,7 +246,7 @@
       <updated>1527561037145</updated>
       <workItem from="1527561040286" duration="2702000" />
       <workItem from="1527566498039" duration="1188000" />
-      <workItem from="1527569174842" duration="776000" />
+      <workItem from="1527569174842" duration="1088000" />
     </task>
     <task id="LOCAL-00001">
       <created>1527564114051</created>
@@ -287,14 +283,28 @@
       <option name="project" value="LOCAL" />
       <updated>1527574244026</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006">
+      <created>1527574939025</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1527574939025</updated>
+    </task>
+    <task id="LOCAL-00007">
+      <created>1527575249025</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1527575249025</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4666000" />
+    <option name="totallyTimeSpent" value="4978000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2155" y="59" width="1591" height="957" extended-state="0" />
+    <frame x="1870" y="39" width="1591" height="957" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25629437" />
@@ -504,7 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
+        <state relative-caret-position="1268">
           <caret line="128" column="35" lean-forward="true" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
         </state>
       </provider>
