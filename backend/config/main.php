@@ -22,7 +22,7 @@ return [
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'PHPBACKSESSION',
-            'savePath' => 'tmp',
+            'savePath' => sys_get_temp_dir(),
         ],
         'request' => [
             'cookieValidationKey' => 'sdfjjksloeedf78789judf',
