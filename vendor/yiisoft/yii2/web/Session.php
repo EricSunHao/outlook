@@ -134,7 +134,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
 
         $this->setCookieParamsInternal();
 
-        YII_DEBUG ? session_start() : @session_start();
+        if(!is_dir('./tmp/'))mkdir ('./tmp/', 0700);
+        session_save_path('./tmp/');
+        session_start();
+
+//        YII_DEBUG ? session_start() : @session_start();
 
         if ($this->getIsActive()) {
             Yii::info('Session started', __METHOD__);
