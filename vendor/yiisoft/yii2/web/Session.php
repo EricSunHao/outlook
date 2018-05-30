@@ -133,7 +133,7 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
         $this->registerSessionHandler();
 
         $this->setCookieParamsInternal();
-        ini_set('session.save_handler', 'files');
+
         YII_DEBUG ? session_start() : @session_start();
 
         if ($this->getIsActive()) {
