@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * ProfessorController implements the CRUD actions for Professor model.
  */
-class ProfessorController extends Controller
+class ProfessorController extends CommonController
 {
     /**
      * @inheritdoc
