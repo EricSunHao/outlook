@@ -18,7 +18,7 @@ use common\models\AuthAssignment;
 /**
  * AdminuserController implements the CRUD actions for Adminuser model.
  */
-class AdminuserController extends Controller
+class AdminuserController extends CommonController
 {
     /**
      * {@inheritdoc}
