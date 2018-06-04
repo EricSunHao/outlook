@@ -30,7 +30,8 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => 'outlook',
-        'brandUrl' => Yii::$app->homeUrl,
+        //'brandUrl' => Yii::$app->homeUrl,
+        'brandUrl' => '/post/index',
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
