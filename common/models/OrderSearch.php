@@ -5,26 +5,26 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\University;
+use common\models\Order;
 
 /**
- * UniversitySearch represents the model behind the search form about `common\models\University`.
+ * OrderSearch represents the model behind the search form of `common\models\Order`.
  */
-class UniversitySearch extends University
+class OrderSearch extends Order
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id', 'ranking','status', 'create_time'], 'integer'],
-            [['name_cn', 'name_en', 'content', 'logo'], 'safe'],
+            [['id', 'goods_id', 'user_id', 'pay_time', 'create_time'], 'integer'],
+            [['price'], 'number'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -41,7 +41,7 @@ class UniversitySearch extends University
      */
     public function search($params)
     {
-        $query = University::find();
+        $query = Order::find();
 
         // add conditions that should always apply here
 
@@ -60,15 +60,12 @@ class UniversitySearch extends University
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'ranking' => $this->ranking,
-            'status' => $this->status,
+            'goods_id' => $this->goods_id,
+            'user_id' => $this->user_id,
+            'price' => $this->price,
+            'pay_time' => $this->pay_time,
             'create_time' => $this->create_time,
         ]);
-
-        $query->andFilterWhere(['like', 'name_cn', $this->name_cn])
-            ->andFilterWhere(['like', 'name_en', $this->name_en])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'logo', $this->logo]);
 
         return $dataProvider;
     }

@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\UniversitySearch */
+/* @var $model common\models\OrderSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="university-search">
+<div class="order-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,15 +17,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name_cn') ?>
+    <?= $form->field($model, 'goods_id') ?>
 
-    <?= $form->field($model, 'name_en') ?>
+    <?= $form->field($model, 'user_id') ?>
 
-    <?= $form->field($model, 'content') ?>
+    <?= $form->field($model, 'price') ?>
 
-    <?= $form->field($model, 'logo') ?>
-
-    <?php // echo $form->field($model, 'status') ?>
+    <?= $form->field($model, 'pay_time') ?>
 
     <?php // echo $form->field($model, 'create_time') ?>
 

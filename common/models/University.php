@@ -10,10 +10,11 @@ use yii\web\UploadedFile;
  * This is the model class for table "university".
  *
  * @property integer $id
- * @property string $name
- * @property string $english_name
+ * @property string $name_cn
+ * @property string $name_en
  * @property string $content
  * @property string $logo
+ * @property int $ranking
  * @property integer $status
  * @property integer $create_time
  */
@@ -33,10 +34,11 @@ class University extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'english_name', 'content'], 'required'],
+            [['name_cn', 'name_en', 'content','ranking'], 'required'],
             [['content'], 'string'],
             [['name'], 'string', 'max' => 128],
             [['english_name'], 'string', 'max' => 155],
+            [['ranking'], 'integer'],
 //            [['logo'], 'string', 'max' => 255],
         ];
     }
@@ -48,10 +50,11 @@ class University extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => '学校名称',
-            'english_name' => '学校英文名称',
+            'name_cn' => '学校名称',
+            'name_en' => '学校英文名称',
             'content' => '学校简介',
             'logo' => 'Logo',
+            'ranking' => '排名',
             'status' => '展示状态',
             'create_time' => '创建时间',
         ];

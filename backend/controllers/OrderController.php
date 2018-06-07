@@ -1,25 +1,19 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use common\models\Category;
-use common\models\Comment;
-use common\models\Tag;
 use Yii;
-use common\models\Post;
-use common\models\PostSearch;
+use common\models\Order;
+use common\models\OrderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\models\User;
 
 /**
- * PostController implements the CRUD actions for Post model.
+ * OrderController implements the CRUD actions for Order model.
  */
-class PostController extends Controller
+class OrderController extends CommonController
 {
-    public $added = 0;
-    public $layout = false;
     /**
      * {@inheritdoc}
      */
@@ -36,31 +30,22 @@ class PostController extends Controller
     }
 
     /**
-     * Lists all Post models.
+     * Lists all Order models.
      * @return mixed
      */
     public function actionIndex()
     {
-//        $tags = Tag::findTagWeights();
-//        $comments = Comment::findRecentComments();
-        $category_id = Yii::$app->request->get('cid',1);
-
-        $category = Category::findHotCategory(5);
-        $searchModel = new PostSearch();
+        $searchModel = new OrderSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'category' => $category,
-            'category_id' => $category_id,
-//            'comments' => $comments,
-//            'tags' => $tags,
         ]);
     }
 
     /**
-     * Displays a single Post model.
+     * Displays a single Order model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -73,13 +58,13 @@ class PostController extends Controller
     }
 
     /**
-     * Creates a new Post model.
+     * Creates a new Order model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Post();
+        $model = new Order();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -91,7 +76,7 @@ class PostController extends Controller
     }
 
     /**
-     * Updates an existing Post model.
+     * Updates an existing Order model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -111,7 +96,7 @@ class PostController extends Controller
     }
 
     /**
-     * Deletes an existing Post model.
+     * Deletes an existing Order model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -125,58 +110,18 @@ class PostController extends Controller
     }
 
     /**
-     * Finds the Post model based on its primary key value.
+     * Finds the Order model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Post the loaded model
+     * @return Order the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Post::findOne($id)) !== null) {
+        if (($model = Order::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    public function actionDetail($id)
-    {
-        //step1. 准备数据模型
-        $model = $this->findModel($id);
-        $tags=Tag::findTagWeights();
-        $recentComments=Comment::findRecentComments();
-
-        if (isset(Yii::$app->user->id)){
-            $userMe = User::findOne(Yii::$app->user->id);
-            $commentModel = new Comment();
-            $commentModel->email = $userMe->email;
-            $commentModel->userid = $userMe->id;
-
-            //step2. 当评论提交时，处理评论
-            if($commentModel->load(Yii::$app->request->post()))
-            {
-                $commentModel->status = 1; //新评论默认状态为 pending
-                $commentModel->post_id = $id;
-                if($commentModel->save())
-                {
-                    $this->added=1;
-                }
-            }
-        }else{
-            $commentModel = '';
-        }
-
-
-        //step3.传数据给视图渲染
-
-        return $this->render('detail',[
-            'model'=>$model,
-            'tags'=>$tags,
-            'comments'=>$recentComments,
-            'commentModel'=>$commentModel,
-            'added'=>$this->added,
-        ]);
-
     }
 }

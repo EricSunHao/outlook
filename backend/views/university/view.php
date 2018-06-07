@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
 //            'id',
-            'name',
-            'english_name',
+            'name_cn',
+            'name_en',
             'content:ntext',
 //            'logo',
         [
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'format' => 'raw',
             'value' => Html::a(Html::img($model->logo, ['width' => 80]),$model->logo),
         ],
-//            'status',
+            'ranking',
             [
                 'attribute'=>'create_time',
                 'value'=>date("Y-m-d H:i:s",$model->create_time),

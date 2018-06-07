@@ -4,20 +4,21 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\UniversitySearch */
+/* @var $searchModel common\models\GoodsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '大学信息';
+$this->title = '服务信息';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="university-index">
+<div class="goods-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('新增大学', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增商品', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -25,27 +26,26 @@ $this->params['breadcrumbs'][] = $this->title;
 //            ['class' => 'yii\grid\SerialColumn'],
 
             ['attribute'=>'id',
-                'contentOptions'=>['width'=>'20px'],
-            ],
-            'name_cn',
-            'name_en',
-//            'content:ntext',
+                'contentOptions'=>['width'=>'30px']],
+            'name',
             [
-                'attribute'=>'content',
-                'value'=>'beginning',
-            ],
-//            'logo',
-            [
-                'attribute' => 'logo',
+                'attribute' => 'photo',
                 'label' => '照片',
                 'format' => 'raw',
                 'value' =>function($model){
-                    return Html::a(Html::img($model->logo, ['width' => 80]),$model->logo);
+                    return Html::a(Html::img($model->photo, ['width' => 80]),$model->photo);
                 }
             ],
-            'ranking',
-            // 'status',
-            // 'create_time:datetime',
+//            'content:ntext',
+            [
+                'attribute'=>'status',
+                'value'=>'statusName',
+                'filter'=>[1=>'已上架',
+                    2=>'待上架']
+            ],
+            'price',
+            //'create_time:datetime',
+            //'update_time:datetime',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

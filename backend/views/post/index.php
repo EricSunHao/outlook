@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=>'category.name',
                 'filter'=>\common\models\Category::find()
                     ->select(['name','id'])
+                    ->where('type = 1')
                     ->indexby('id')
                     ->column(),
                 ],

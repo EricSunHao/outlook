@@ -9,7 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
-
+$this->title = '轩洋教育';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>

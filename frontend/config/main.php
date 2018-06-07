@@ -44,7 +44,7 @@ return [
             'suffix' => '.html',
             'rules' => [
                 '<controller:\w+>/<id:\d+>'=>'<controller>/detail',
-                'posts'=>'post/index',
+//                'post/<cid:\d+>/<action:\w+>' => 'post/<action>'
             ],
         ],
     ],
