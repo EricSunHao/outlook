@@ -14,13 +14,15 @@ use yii\widgets\ActiveForm;
 
 <!--    --><?//= $form->field($model, 'id')->textInput() ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_cn')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'english_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
     <?=$form->field($model,'logo')->fileInput()?>
+
+    <?= $form->field($model, 'ranking')->textInput() ?>
 
 <!--    --><?//= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
 

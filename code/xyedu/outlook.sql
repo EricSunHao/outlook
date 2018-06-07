@@ -11,7 +11,7 @@
  Target Server Version : 50638
  File Encoding         : utf-8
 
- Date: 06/06/2018 18:37:17 PM
+ Date: 06/07/2018 09:16:12 AM
 */
 
 SET NAMES utf8;
@@ -105,7 +105,7 @@ CREATE TABLE `category` (
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
   `create_time` int(11) DEFAULT NULL,
   `userid` int(11) NOT NULL,
@@ -195,8 +195,8 @@ CREATE TABLE `post` (
   `update_time` int(11) DEFAULT NULL,
   `author_id` int(11) NOT NULL,
   `category_id` int(10) unsigned NOT NULL DEFAULT '1',
-  `laud` int(10) unsigned NOT NULL DEFAULT '0',
-  `favorite` int(10) unsigned DEFAULT '0',
+  `laud_count` int(10) unsigned DEFAULT '0',
+  `favorite_count` int(10) unsigned DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `FK_post_author` (`author_id`),
   KEY `FK_post_status` (`status`),
@@ -260,8 +260,8 @@ CREATE TABLE `tag` (
 DROP TABLE IF EXISTS `university`;
 CREATE TABLE `university` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `english_name` varchar(155) COLLATE utf8_unicode_ci NOT NULL,
+  `name_cn` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(155) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `logo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(1) NOT NULL,

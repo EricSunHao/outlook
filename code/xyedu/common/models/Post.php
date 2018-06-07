@@ -17,6 +17,8 @@ use yii\helpers\Html;
  * @property int $update_time
  * @property int $author_id
  * @property int $category_id
+ * @property int $laud_count
+ * @property int $favorite_count
  *
  * @property Comment[] $comments
  * @property Adminuser $author
@@ -63,6 +65,8 @@ class Post extends \yii\db\ActiveRecord
             'update_time' => '更新时间',
             'author_id' => '作者',
             'category_id' => '分类名称',
+            'laud_count' => '赞',
+            'favorite_count' => '收藏',
         ];
     }
 

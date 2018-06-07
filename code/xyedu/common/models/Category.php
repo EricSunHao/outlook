@@ -26,6 +26,7 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['type', 'hot'], 'integer'],
             [['name'], 'string', 'max' => 60],
         ];
     }
@@ -38,6 +39,14 @@ class Category extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => '分类名称',
+            'type' => '类型',
+            'hot' => '热度',
         ];
+    }
+
+    public static function findHotCategory($limit=10)
+    {
+        return Category::find()->orderBy('hot DESC')
+            ->limit($limit)->all();
     }
 }
