@@ -117,4 +117,19 @@ class Tag extends \yii\db\ActiveRecord
         }
         return $tags;
     }
+
+    /**
+     * $limit int 获取的热门标签数量
+     * return string
+     */
+    public static function findHotTags($limit=10)
+    {
+        $models=Tag::find()->orderBy('frequency desc')->limit($limit)->all();
+        $tags=array();
+            foreach ($models as $model)
+            {
+                $tags[]=$model->name;
+            }
+        return $tags;
+    }
 }

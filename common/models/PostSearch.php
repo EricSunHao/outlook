@@ -51,7 +51,7 @@ class PostSearch extends Post
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination'=>['pageSize'=>5],
+//            'pagination'=>['pageSize'=>5],
             //增加排序的第一种方法
             'sort'=>[
                 'defaultOrder'=>[

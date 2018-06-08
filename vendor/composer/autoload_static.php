@@ -29,6 +29,10 @@ class ComposerStaticInit5a5f95d24b735cd04f2876945ba86355
             'yii\\apidoc\\' => 11,
             'yii\\' => 4,
         ),
+        'k' => 
+        array (
+            'kop\\y2sp\\' => 9,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\latex\\' => 20,
@@ -106,6 +110,10 @@ class ComposerStaticInit5a5f95d24b735cd04f2876945ba86355
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'kop\\y2sp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kop/yii2-scroll-pager',
         ),
         'cebe\\markdown\\latex\\' => 
         array (

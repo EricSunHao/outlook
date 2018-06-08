@@ -189,8 +189,6 @@ body {
    background:white;
    border-top:1px solid #e6e6e6;
    z-index:3;
-    padding: 0;
-
 }
 .footer li{
   width:33.33%;
@@ -377,6 +375,7 @@ body {
 	height: 1.8rem;
 	line-height:1.8rem;
 	border-radius: 2rem;
+	background: ;
 	font-size: 0.9rem;
     outline:none;
     border:none;
@@ -615,6 +614,7 @@ body {
   height:100%;
   line-height:1.2rem;
   font-size:0.8rem;
+  text-overflow:;
   white-space:nowrap;
   overflow:hidden;
   color:#999999;

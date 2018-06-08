@@ -19,7 +19,7 @@ use common\models\User;
 class PostController extends Controller
 {
     public $added = 0;
-    public $layout = false;
+    public $layout = '/public';
     /**
      * {@inheritdoc}
      */
@@ -43,8 +43,15 @@ class PostController extends Controller
     {
 //        $tags = Tag::findTagWeights();
 //        $comments = Comment::findRecentComments();
-        $category_id = Yii::$app->request->get('cid',1);
+        $getParams = Yii::$app->request->get();
+//        var_dump($getParams);
+        if (empty($getParams))
+        {$category_id=1;}else{
+            $category_id = $getParams['PostSearch']['category_id'];
+        };
 
+
+        $category_type = Category::findOne($category_id)->type;
         $category = Category::findHotCategory(5);
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -54,6 +61,7 @@ class PostController extends Controller
             'dataProvider' => $dataProvider,
             'category' => $category,
             'category_id' => $category_id,
+            'category_type' => $category_type,
 //            'comments' => $comments,
 //            'tags' => $tags,
         ]);
