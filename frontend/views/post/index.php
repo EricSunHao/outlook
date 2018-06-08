@@ -2,15 +2,19 @@
 
 use yii\helpers\Url;
 use yii\widgets\ListView;
+use yii\helpers\Html;
+use kop\y2sp\ScrollPager;
+
 ?>
 
 <div class="con">
+
     <div class="left">
         <ul>
             <?php foreach($category as $cg): ?>
 
                 <li <? if ($cg->id==$category_id) echo "class='on'";?>>
-                    <?= \yii\helpers\Html::a($cg->name,['post/index','PostSearch[category_id]'=>$cg->id]) ?>
+                    <?= Html::a($cg->name,['/post/index','PostSearch[category_id]'=>$cg->id]) ?>
                 </li>
 
             <?php endforeach;?>
@@ -26,11 +30,6 @@ use yii\widgets\ListView;
                         1.普林斯顿大学.Princeton,NJ
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        1.普林斯顿大学.Princeton,NJ
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
@@ -40,25 +39,26 @@ use yii\widgets\ListView;
     <div class="right">
         <div class="right_redian">
             <ul class="collect_post_list">
-
                 <?= ListView::widget([
                     'dataProvider' => $dataProvider,//Yii2数据提供器
-                    'layout' => '{items}{pager}',
-                    'itemView' => '_listitem',//单个项目视图文件名称（即被循环输出的内容)
-                    'pager' => ['class' => \kop\y2sp\ScrollPager::className(),
-                        'noneLeftText'=>'已经没有更多内容了',
-                        'triggerOffset'=>99,
-                        'container'=>'.collect_post_list',
-                        'item'=>'.item_post',
-                        'eventOnReady' => 'function(){lazyload_init();}',//事件，在从服务器加载新页面后触发js函数。
-                        'eventOnRendered' => 'function(){lazyload_init();}',//事件，新项目渲染后触发js函数。
-
+                    'summary'       => 'Total {totalCount} items.',
+                    'layout'        => "{items}\n<div class=\"row\"><div class=\"col-md-12\">\n{pager}</div></div>",
+                    'itemOptions'   => ['class' => 'item_post'],
+                    'itemView'      => '_listitem',
+                    'pager'         => [
+                            'class' => ScrollPager::className(),
+                            'noneLeftText' => '没有更多了~',
+                            'enabledExtensions'  => [
+                                ScrollPager::EXTENSION_SPINNER,
+                                //ScrollPager::EXTENSION_NONE_LEFT,
+                                ScrollPager::EXTENSION_PAGING,
+                            ],
                     ]
                 ]);
                 ?>
-
             </ul>
         </div>
     </div>
     <?php }?>
+
 </div>
