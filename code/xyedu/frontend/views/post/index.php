@@ -1,30 +1,8 @@
 <?php
 
 use yii\helpers\Url;
-
+use yii\widgets\ListView;
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>轩洋教育</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="wap-font-scale" content="no">
-    <script src="<?= Yii::$app->request->baseUrl ?>/wx/js/ind.js"></script>
-    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/wx/css/css.css">
-</head>
-<body>
-<div class="header header1">
-    <div class="logo">
-        <a href="<? Url::to(Yii::$app->homeUrl) ?>"></a>
-    </div>
-    <div class="header_find1">
-        <a href="#">
-            <span>查找</span>
-        </a>
-    </div>
-</div>
 
 <div class="con">
     <div class="left">
@@ -32,12 +10,14 @@ use yii\helpers\Url;
             <?php foreach($category as $cg): ?>
 
                 <li <? if ($cg->id==$category_id) echo "class='on'";?>>
-                    <?= \yii\helpers\Html::a($cg->name,['post/index','cid'=>$cg->id]) ?>
+                    <?= \yii\helpers\Html::a($cg->name,['post/index','PostSearch[category_id]'=>$cg->id]) ?>
                 </li>
 
             <?php endforeach;?>
         </ul>
     </div>
+
+    <?php if ($category_type == 2){ ?>
     <div class="right">
         <div class="right_daxue">
             <ul>
@@ -54,30 +34,31 @@ use yii\helpers\Url;
             </ul>
         </div>
     </div>
-</div>
+    <?php }?>
 
-<div class="footer footer1">
-    <ul>
-        <li>
-            <a href="<? Url::to(Yii::$app->homeUrl) ?>" class="on">
-                <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img1_2.png" />
-                <span>首页</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img2.png" />
-                <span>服务</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img3.png" />
-                <span>我</span>
-            </a>
-        </li>
+    <?php if ($category_type == 1){ ?>
+    <div class="right">
+        <div class="right_redian">
+            <ul class="collect_post_list">
 
-    </ul>
+                <?= ListView::widget([
+                    'dataProvider' => $dataProvider,//Yii2数据提供器
+                    'layout' => '{items}{pager}',
+                    'itemView' => '_listitem',//单个项目视图文件名称（即被循环输出的内容)
+                    'pager' => ['class' => \kop\y2sp\ScrollPager::className(),
+                        'noneLeftText'=>'已经没有更多内容了',
+                        'triggerOffset'=>99,
+                        'container'=>'.collect_post_list',
+                        'item'=>'.item_post',
+                        'eventOnReady' => 'function(){lazyload_init();}',//事件，在从服务器加载新页面后触发js函数。
+                        'eventOnRendered' => 'function(){lazyload_init();}',//事件，新项目渲染后触发js函数。
+
+                    ]
+                ]);
+                ?>
+
+            </ul>
+        </div>
+    </div>
+    <?php }?>
 </div>
-</body>
-</html>
