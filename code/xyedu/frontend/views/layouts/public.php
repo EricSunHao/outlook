@@ -46,7 +46,7 @@ AppAsset::register($this);
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="<?=Url::to('/order/index.html') ?>">
                 <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img3.png" />
                 <span>我</span>
             </a>
