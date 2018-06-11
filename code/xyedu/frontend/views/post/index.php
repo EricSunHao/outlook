@@ -41,18 +41,14 @@ use kop\y2sp\ScrollPager;
             <ul class="collect_post_list">
                 <?= ListView::widget([
                     'dataProvider' => $dataProvider,//Yii2数据提供器
-                    'summary'       => 'Total {totalCount} items.',
-                    'layout'        => "{items}\n<div class=\"row\"><div class=\"col-md-12\">\n{pager}</div></div>",
-                    'itemOptions'   => ['class' => 'item_post'],
+                    'itemOptions'   => ['class' => 'item'],
                     'itemView'      => '_listitem',
+                    'layout' => '{items}{pager}',
                     'pager'         => [
                             'class' => ScrollPager::className(),
+                            'container' => '.right_redian',
+                            'triggerText'=>'点击加载更多',
                             'noneLeftText' => '没有更多了~',
-                            'enabledExtensions'  => [
-                                ScrollPager::EXTENSION_SPINNER,
-                                //ScrollPager::EXTENSION_NONE_LEFT,
-                                ScrollPager::EXTENSION_PAGING,
-                            ],
                     ]
                 ]);
                 ?>
