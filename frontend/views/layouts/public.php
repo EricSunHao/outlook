@@ -1,6 +1,9 @@
 <?php
 use yii\helpers\Url;
+use frontend\assets\AppAsset;
+AppAsset::register($this);
 ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +12,12 @@ use yii\helpers\Url;
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no" />
     <meta name="wap-font-scale" content="no">
-    <script src="<?= Yii::$app->request->baseUrl ?>/wx/js/jquery-2.1.4.js"></script>
-    <script src="<?= Yii::$app->request->baseUrl ?>/wx/js/ind.js"></script>
+    <?php $this->head() ?>
+<!--    <script src="/wx/js/ind.js"></script>-->
     <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/wx/css/css.css">
 </head>
 <body>
+<?php $this->beginBody() ?>
 <div class="header header1">
     <div class="logo">
         <a href="<?=Url::to(Yii::$app->homeUrl) ?>"></a>
@@ -36,7 +40,7 @@ use yii\helpers\Url;
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="<?=Url::to('/goods/index.html') ?>">
                 <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img2.png" />
                 <span>服务</span>
             </a>
@@ -50,5 +54,7 @@ use yii\helpers\Url;
 
     </ul>
 </div>
+<?php $this->endBody() ?>
 </body>
 </html>
+<?php $this->endPage() ?>

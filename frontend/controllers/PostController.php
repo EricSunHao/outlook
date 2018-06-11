@@ -55,10 +55,10 @@ class PostController extends Controller
         $category = Category::findHotCategory(5);
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination=['pageSize'=>2];
+        $dataProvider->pagination=['pageSize'=>3];
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
+//            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'category' => $category,
             'category_id' => $category_id,

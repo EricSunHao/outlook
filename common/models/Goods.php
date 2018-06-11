@@ -107,4 +107,11 @@ class Goods extends \yii\db\ActiveRecord
         }
 
     }
+
+    public function getUrl()
+    {
+        return Yii::$app->urlManager->createUrl(
+            ['goods/detail','id'=>$this->id]
+        );
+    }
 }

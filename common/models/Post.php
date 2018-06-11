@@ -139,7 +139,7 @@ class Post extends \yii\db\ActiveRecord
         );
     }
 
-    public function getBeginning($length=288)
+    public function getBeginning($length=45)
     {
         $tmpStr = strip_tags($this->content);
         $tmpLen = mb_strlen($tmpStr);
