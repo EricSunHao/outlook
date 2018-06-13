@@ -48,4 +48,9 @@ return [
         ],
     ],
     'params' => $params,
+    'on beforeRequest' => function($event) {
+        \yii\base\Event::on(\yii\db\BaseActiveRecord::className(), \yii\db\BaseActiveRecord::EVENT_AFTER_UPDATE, ['backend\models\AdminLog', 'afterUpdate']);
+        \yii\base\Event::on(\yii\db\BaseActiveRecord::className(), \yii\db\BaseActiveRecord::EVENT_AFTER_DELETE, ['backend\models\AdminLog', 'afterDelete']);
+        \yii\base\Event::on(\yii\db\BaseActiveRecord::className(), \yii\db\BaseActiveRecord::EVENT_AFTER_INSERT, ['backend\models\AdminLog', 'afterInsert']);
+    },
 ];
