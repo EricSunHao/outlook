@@ -299,7 +299,7 @@ class PostController extends Controller
         $data[1] = $this->getPhoneNumber();
         $data[2] = $this->getUA();
         $data[3] = $this->getPhoneType();
-        var_dump($data);
+        var_dump($data);die;
     }
     /**
      * 函数名称: getHttpHeader
