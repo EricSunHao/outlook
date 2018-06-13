@@ -12,6 +12,8 @@ use Yii;
  */
 class Category extends \yii\db\ActiveRecord
 {
+    const TYPE_POST=1;
+    const TYPE_SCHOOL=2;
     /**
      * {@inheritdoc}
      */

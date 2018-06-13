@@ -114,4 +114,9 @@ class Goods extends \yii\db\ActiveRecord
             ['goods/detail','id'=>$this->id]
         );
     }
+
+    public function getPhotoUrl()
+    {
+        return "http://admin.outlook.com".$this->photo;
+    }
 }

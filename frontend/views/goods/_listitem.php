@@ -6,7 +6,7 @@ use yii\helpers\Url;
 <li>
     <a href="<?= $model->url;?>">
         <p>
-            <img src="<?= Url::to("http://admin.outlook.com".$model->photo)?>" alt="">
+            <img src="<?= $model->photoUrl;?>" alt="">
         </p>
         <p>
             <span><?= Html::encode($model->name);?></span>

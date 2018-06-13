@@ -4,11 +4,9 @@ use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\helpers\Html;
 use kop\y2sp\ScrollPager;
-
 ?>
 
 <div class="con">
-
     <div class="left">
         <ul>
             <?php foreach($category as $cg): ?>
@@ -25,11 +23,19 @@ use kop\y2sp\ScrollPager;
     <div class="right">
         <div class="right_daxue">
             <ul>
-                <li>
-                    <a href="#">
-                        1.普林斯顿大学.Princeton,NJ
-                    </a>
-                </li>
+                <?= ListView::widget([
+                    'dataProvider' => $dataProvider,//Yii2数据提供器
+                    'itemOptions'   => ['class' => 'item'],
+                    'itemView'      => '_schoolitem',
+                    'layout' => '{items}{pager}',
+                    'pager'         => [
+                        'class' => ScrollPager::className(),
+                        'triggerOffset' => 99,
+                        'triggerText'=>'点击加载更多',
+                        'noneLeftText' => '没有更多了~',
+                    ]
+                ]);
+                ?>
             </ul>
         </div>
     </div>
@@ -38,7 +44,7 @@ use kop\y2sp\ScrollPager;
     <?php if ($category_type == 1){ ?>
     <div class="right">
         <div class="right_redian">
-            <ul class="collect_post_list">
+            <ul>
                 <?= ListView::widget([
                     'dataProvider' => $dataProvider,//Yii2数据提供器
                     'itemOptions'   => ['class' => 'item'],
@@ -46,7 +52,7 @@ use kop\y2sp\ScrollPager;
                     'layout' => '{items}{pager}',
                     'pager'         => [
                             'class' => ScrollPager::className(),
-                            'container' => '.right_redian',
+                            'triggerOffset' => 99,
                             'triggerText'=>'点击加载更多',
                             'noneLeftText' => '没有更多了~',
                     ]
@@ -56,5 +62,4 @@ use kop\y2sp\ScrollPager;
         </div>
     </div>
     <?php }?>
-
 </div>

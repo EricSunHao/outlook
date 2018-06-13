@@ -13,7 +13,6 @@ AppAsset::register($this);
     <meta name="format-detection" content="telephone=no" />
     <meta name="wap-font-scale" content="no">
     <?php $this->head() ?>
-<!--    <script src="/wx/js/ind.js"></script>-->
     <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/wx/css/css.css">
 </head>
 <body>
@@ -58,3 +57,4 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+<script src="/wx/js/ind.js"></script>

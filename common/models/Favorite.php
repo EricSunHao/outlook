@@ -9,9 +9,13 @@ use Yii;
  *
  * @property int $user_id
  * @property int $post_id
+ * @property int $add_time
+ * @property int $type
  */
 class Favorite extends \yii\db\ActiveRecord
 {
+    const TYPE_LAUD=1;
+    const TYPE_FAVORITE=2;
     /**
      * {@inheritdoc}
      */
@@ -26,7 +30,7 @@ class Favorite extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'post_id'], 'integer'],
+            [['user_id', 'post_id', 'add_time', 'type'], 'integer'],
         ];
     }
 
@@ -38,6 +42,24 @@ class Favorite extends \yii\db\ActiveRecord
         return [
             'user_id' => '用户ID',
             'post_id' => '文章ID',
+            'add_time' => '添加时间',
+            'type' => '类型',
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if(parent::beforeSave($insert))
+        {
+            if($insert)
+            {
+                $this->add_time = time();
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
