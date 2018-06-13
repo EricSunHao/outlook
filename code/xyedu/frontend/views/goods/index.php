@@ -17,13 +17,16 @@ use kop\y2sp\ScrollPager;
             <ul>
 
                 <?= ListView::widget([
-                    'dataProvider' => $dataProvider,
-                    'itemOptions' => ['class' => 'item'],
-                    'itemView' => '_listitem',
+                    'dataProvider' => $dataProvider,//Yii2数据提供器
+                    'itemOptions'   => ['class' => 'item'],
+                    'itemView'      => '_listitem',
                     'layout' => '{items}{pager}',
-                    'pager' => ['class' => ScrollPager::className(),
+                    'pager'         => [
+                        'class' => ScrollPager::className(),
+                        'triggerOffset' => 99,
+                        'triggerText'=>'点击加载更多',
                         'noneLeftText' => '没有更多了~',
-                        ]
+                    ]
                 ]);
                 ?>
 

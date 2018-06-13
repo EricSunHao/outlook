@@ -94,4 +94,11 @@ class University extends \yii\db\ActiveRecord
         $tmpStr = mb_substr($tmpStr,0,$length,'utf-8');
         return $tmpStr.($tmpLen>$length?'...':'');
     }
+
+    public function getUrl()
+    {
+        return Yii::$app->urlManager->createUrl(
+            ['post/university','id'=>$this->id]
+        );
+    }
 }

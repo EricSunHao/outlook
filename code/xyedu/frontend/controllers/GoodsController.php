@@ -40,7 +40,7 @@ class GoodsController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
            'query' => Goods::find()->where("status =1"),
-//            'pagination'=>['pageSize'=>3],
+            'pagination'=>['pageSize'=>5],
             'sort'=>[
                 'defaultOrder'=>[
                     'update_time' => SORT_DESC,

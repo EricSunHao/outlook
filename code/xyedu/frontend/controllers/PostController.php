@@ -4,10 +4,13 @@ namespace frontend\controllers;
 
 use common\models\Category;
 use common\models\Comment;
+use common\models\Favorite;
 use common\models\Tag;
+use common\models\University;
 use Yii;
 use common\models\Post;
 use common\models\PostSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,6 +23,7 @@ class PostController extends Controller
 {
     public $added = 0;
     public $layout = '/public';
+    public $enableCsrfValidation = false;
     /**
      * {@inheritdoc}
      */
@@ -45,17 +49,28 @@ class PostController extends Controller
 //        $comments = Comment::findRecentComments();
         $getParams = Yii::$app->request->get();
 //        var_dump($getParams);
-        if (empty($getParams))
+        if (empty($getParams) || empty($getParams['PostSearch']))
         {$category_id=1;}else{
             $category_id = $getParams['PostSearch']['category_id'];
         };
 
-
         $category_type = Category::findOne($category_id)->type;
         $category = Category::findHotCategory(5);
-        $searchModel = new PostSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-//        $dataProvider->pagination=['pageSize'=>5];
+        if ($category_type == Category::TYPE_POST){
+            $searchModel = new PostSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        }elseif($category_type == Category::TYPE_SCHOOL){
+            $dataProvider = new ActiveDataProvider([
+                'query'=>University::find()->where("status=1"),
+                'sort'=>[
+                    'defaultOrder'=>[
+                        'ranking'=>SORT_ASC,
+                    ],
+                ],
+                'pagination'=>['pageSize'=>10],
+            ]);
+        }
+
 
         return $this->render('index', [
 //            'searchModel' => $searchModel,
@@ -186,6 +201,96 @@ class PostController extends Controller
             'commentModel'=>$commentModel,
             'added'=>$this->added,
         ]);
+
+    }
+
+    public function actionUniversity($id)
+    {
+        if (($model = University::findOne($id)) == null) throw new NotFoundHttpException('The requested page does not exist.');
+
+
+        //step3.传数据给视图渲染
+
+        return $this->render('universitydetail',[
+            'model'=>$model,
+        ]);
+
+    }
+
+    /**
+     * 点赞方法
+     */
+    public function actionLaud()
+    {
+        if (!Yii::$app->request->isAjax) return;
+        if (Yii::$app->user->isGuest) {
+            return '点赞请先登录';
+        }
+        $post_id = Yii::$app->request->post('id');
+        $user_id = Yii::$app->user->id;
+        $type = Favorite::TYPE_LAUD;
+        $query = Favorite::find();
+        $query->where(['user_id'=>$user_id,'post_id'=>$post_id,'type'=>$type]);
+        $data = $query->asArray()->one();
+        if (empty($data)) {
+            $model = new Favorite();
+            $model->post_id = $post_id;
+            $model->user_id = $user_id;
+            $model->type = $type;
+            $model->save();
+
+            $postModel = $this->findModel($post_id);
+            $postModel->laud_count +=1;
+            $postModel->save();
+
+            return 1;
+        }else{
+            Favorite::deleteAll(['user_id'=>$user_id,'post_id'=>$post_id,'type'=>$type]);
+            $postModel = $this->findModel($post_id);
+            $postModel->laud_count -=1;
+            $postModel->save();
+
+            return 2;
+        }
+
+
+    }
+
+    /**
+     * 收藏方法
+     */
+    public function actionFavorite()
+    {
+        if (!Yii::$app->request->isAjax) return;
+        if (Yii::$app->user->isGuest) {
+            return '收藏请先登录';
+        }
+        $post_id = Yii::$app->request->post('id');
+        $user_id = Yii::$app->user->id;
+        $type = Favorite::TYPE_FAVORITE;
+        $query = Favorite::find();
+        $query->where(['user_id'=>$user_id,'post_id'=>$post_id,'type'=>$type]);
+        $data = $query->asArray()->one();
+        if (empty($data)) {
+            $model = new Favorite();
+            $model->post_id = $post_id;
+            $model->user_id = $user_id;
+            $model->type = $type;
+            $model->save();
+
+            $postModel = $this->findModel($post_id);
+            $postModel->laud_count +=1;
+            $postModel->save();
+
+            return 1;
+        }else{
+            Favorite::deleteAll(['user_id'=>$user_id,'post_id'=>$post_id,'type'=>$type]);
+            $postModel = $this->findModel($post_id);
+            $postModel->laud_count -=1;
+            $postModel->save();
+
+            return 2;
+        }
 
     }
 }
