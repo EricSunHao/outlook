@@ -84,71 +84,6 @@ class PostController extends Controller
     }
 
     /**
-     * Displays a single Post model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new Post model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new Post();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing Post model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing Post model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
      * Finds the Post model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
@@ -296,35 +231,11 @@ class PostController extends Controller
 
     public function actionTest()
     {
-        $data[1] = $this->getPhoneNumber();
-        $data[2] = $this->getUA();
-        $data[3] = $this->getPhoneType();
+        echo __METHOD__;die;
+        $info = $this->getPhoneType();
+        $data = $info.uniqid();
+//        $data['code'] = md5($data['uncode']);
         var_dump($data);die;
-    }
-    /**
-     * 函数名称: getHttpHeader
-     * 函数功能: 取头信息
-     * 输入参数: none
-     * 函数返回值: 成功返回号码，失败返回false
-     * 其它说明: 说明
-     */
-    function getPhoneNumber(){
-        if (isset($_SERVER['HTTP_X_NETWORK_INFO'])){
-            $str1 = $_SERVER['HTTP_X_NETWORK_INFO'];
-            $getstr1 = preg_replace('/(.*,)(11[d])(,.*)/i','\2',$str1);
-            Return $getstr1;
-        }elseif (isset($_SERVER['HTTP_X_UP_CALLING_LINE_ID'])){
-            $getstr2 = $_SERVER['HTTP_X_UP_CALLING_LINE_ID'];
-            Return $getstr2;
-        }elseif (isset($_SERVER['HTTP_X_UP_SUBNO'])){
-            $str3 = $_SERVER['HTTP_X_UP_SUBNO'];
-            $getstr3 = preg_replace('/(.*)(11[d])(.*)/i','\2',$str3);
-            Return $getstr3;
-        }elseif (isset($_SERVER['DEVICEID'])){
-            Return $_SERVER['DEVICEID'];
-        }else{
-            Return false;
-        }
     }
     /**
      * 函数名称: getUA
@@ -340,8 +251,6 @@ class PostController extends Controller
             Return false;
         }
     }
-
-
     /**
      * 函数名称: getPhoneType
      * 函数功能: 取得手机类型
@@ -352,8 +261,8 @@ class PostController extends Controller
     function getPhoneType(){
         $ua = $this->getUA();
         if($ua!=false){
-            $str = explode(' ',$ua);
-            Return $str[0];
+            preg_match("/(?:\()(.*?)(?:\))/i",$ua,$str1);
+            Return $str1[1];
         }else{
             Return false;
         }

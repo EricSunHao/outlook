@@ -49,4 +49,7 @@ return [
         ],
     ],
     'params' => $params,
+    'on beforeAction' => function($event) {
+        \yii\base\Event::on(\yii\base\Controller::className(), \yii\base\Controller::EVENT_BEFORE_ACTION, ['frontend\models\UserLog', 'beforeAction']);
+    },
 ];
