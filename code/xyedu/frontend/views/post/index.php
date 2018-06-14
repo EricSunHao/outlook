@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\helpers\Html;
 use kop\y2sp\ScrollPager;
+use yii\widgets\Pjax;
 ?>
 
 <div class="con">

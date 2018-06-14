@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Category;
 use common\models\Comment;
+use common\models\SearchHistory;
 use common\models\Tag;
 use Yii;
 use common\models\Post;
@@ -63,13 +64,19 @@ class SearchController extends Controller
 
     public function actionDetail()
     {
-        $searchModel = new PostSearch();
+        $searchModel = new Post();
         $searchInput = Yii::$app->request->get('keywords');
-        $params['PostSearch']['tags'] = $searchInput;
-        $params['PostSearch']['title'] = $searchInput;
-//        $params['PostSearch']['content'] = $searchInput;
-        $dataProvider = $searchModel->search($params);
-        $searchCount = $dataProvider->getCount();
+        if (empty($searchInput)) $this->redirect(['index']);
+        $params = trim($searchInput);
+
+        //增加用户搜索历史信息
+        $history = new SearchHistory();
+        $history->uid = Yii::$app->user->id;
+        $history->keyword = $params;
+        $history->save();
+
+        $dataProvider = $searchModel->searchMany($params);
+        $searchCount = $dataProvider->getTotalCount();
 
         return $this->render('detail', [
             'searchModel' => $searchModel,

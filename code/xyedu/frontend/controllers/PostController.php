@@ -45,20 +45,20 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
-//        $tags = Tag::findTagWeights();
-//        $comments = Comment::findRecentComments();
         $getParams = Yii::$app->request->get();
-//        var_dump($getParams);
         if (empty($getParams) || empty($getParams['PostSearch']))
         {$category_id=1;}else{
             $category_id = $getParams['PostSearch']['category_id'];
         };
+        //首次打开请求默认分类
+        $queryParam = Yii::$app->request->queryParams;
+        $queryParam['PostSearch']['category_id'] = $category_id;
 
         $category_type = Category::findOne($category_id)->type;
-        $category = Category::findHotCategory(12);
+        $category = Category::findHotCategory();
         if ($category_type == Category::TYPE_POST){
             $searchModel = new PostSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            $dataProvider = $searchModel->search($queryParam);
         }elseif($category_type == Category::TYPE_SCHOOL){
             $dataProvider = new ActiveDataProvider([
                 'query'=>University::find()->where("status=1"),
@@ -71,16 +71,14 @@ class PostController extends Controller
             ]);
         }
 
-
         return $this->render('index', [
-//            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'category' => $category,
             'category_id' => $category_id,
             'category_type' => $category_type,
-//            'comments' => $comments,
-//            'tags' => $tags,
         ]);
+
+
     }
 
     /**
@@ -227,44 +225,5 @@ class PostController extends Controller
             return 2;
         }
 
-    }
-
-    public function actionTest()
-    {
-        echo __METHOD__;die;
-        $info = $this->getPhoneType();
-        $data = $info.uniqid();
-//        $data['code'] = md5($data['uncode']);
-        var_dump($data);die;
-    }
-    /**
-     * 函数名称: getUA
-     * 函数功能: 取UA
-     * 输入参数: none
-     * 函数返回值: 成功返回号码，失败返回false
-     * 其它说明: 说明
-     */
-    function getUA(){
-        if (isset($_SERVER['HTTP_USER_AGENT'])){
-            Return $_SERVER['HTTP_USER_AGENT'];
-        }else{
-            Return false;
-        }
-    }
-    /**
-     * 函数名称: getPhoneType
-     * 函数功能: 取得手机类型
-     * 输入参数: none
-     * 函数返回值: 成功返回string，失败返回false
-     * 其它说明: 说明
-     */
-    function getPhoneType(){
-        $ua = $this->getUA();
-        if($ua!=false){
-            preg_match("/(?:\()(.*?)(?:\))/i",$ua,$str1);
-            Return $str1[1];
-        }else{
-            Return false;
-        }
     }
 }

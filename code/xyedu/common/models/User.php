@@ -19,6 +19,7 @@ use yii\web\IdentityInterface;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+ * @property integer $mark
  * @property string $password write-only password
  */
 class User extends ActiveRecord implements IdentityInterface
@@ -54,8 +55,8 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
             [['email'], 'unique'],
-            [['email'], 'required'],
-            [['email'], 'email'],
+//            [['email'], 'required'],
+//            [['email'], 'email'],
         ];
     }
 
@@ -71,6 +72,7 @@ class User extends ActiveRecord implements IdentityInterface
             'status' => '状态',
             'created_at' => '注册时间',
             'updated_at' => '更新时间',
+            'mark' => '备注',
         ];
     }
 
@@ -217,5 +219,19 @@ class User extends ActiveRecord implements IdentityInterface
     public function getStatusStr()
     {
         return $this->status == self::STATUS_ACTIVE?'正常':'已删除';
+    }
+
+    static public function autoSignUp($mark)
+    {
+        $username = md5($mark);
+        $user = new User();
+        $user->username = $username;
+        $user->email = uniqid();
+        $user->mark = $mark;
+        $user->setPassword('xyedu1234');
+        $user->generateAuthKey();
+
+        $user->save();
+        Yii::$app->getUser()->login($user,3600*24*3650);
     }
 }

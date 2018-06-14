@@ -36,18 +36,21 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => '分类管理', 'url' => ['/category/index']],
-        ['label' => '文章管理', 'url' => ['/post/index']],
+    if (!Yii::$app->user->isGuest) {
+        $menuItems = [
+            ['label' => '分类管理', 'url' => ['/category/index']],
+            ['label' => '文章管理', 'url' => ['/post/index']],
 //        ['label' => '教授信息', 'url' => ['/professor/index']],
-        ['label' => '大学信息', 'url' => ['/university/index']],
-        ['label' => '服务信息', 'url' => ['/goods/index']],
-        ['label' => '订单', 'url' => ['/order/index']],
+            ['label' => '大学信息', 'url' => ['/university/index']],
+            ['label' => '服务信息', 'url' => ['/goods/index']],
+            ['label' => '订单', 'url' => ['/order/index']],
 //        ['label' => '评论管理', 'url' => ['/comment/index']],
 //        '<li><span class="badge badge-inverse">'.Comment::getPengDingCommentCount().'</span></li>',
-        ['label' => '用户管理', 'url' => ['/user/index']],
-        ['label' => '管理员', 'url' => ['/adminuser/index']],
-    ];
+            ['label' => '用户管理', 'url' => ['/user/index']],
+            ['label' => '管理员', 'url' => ['/adminuser/index']],
+        ];
+    }
+
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
     } else {
