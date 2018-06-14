@@ -46,9 +46,8 @@ class Category extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function findHotCategory($limit=10)
+    public static function findHotCategory()
     {
-        return Category::find()->orderBy('hot DESC')
-            ->limit($limit)->all();
+        return Category::find()->orderBy('hot DESC')->all();
     }
 }

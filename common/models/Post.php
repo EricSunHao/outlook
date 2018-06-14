@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\helpers\Html;
+use yii\data\ActiveDataProvider;
 
 /**
  * This is the model class for table "post".
@@ -139,7 +140,7 @@ class Post extends \yii\db\ActiveRecord
         );
     }
 
-    public function getBeginning($length=45)
+    public function getBeginning($length=90)
     {
         $tmpStr = strip_tags($this->content);
         $tmpLen = mb_strlen($tmpStr);
@@ -167,6 +168,24 @@ class Post extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Comment::className(), ['post_id' => 'id'])
             ->where('status=:status',[':status'=>2])->orderBy('id DESC');
+    }
+
+    public function searchMany($param)
+    {
+        $query = Post::find();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination'=>['pageSize'=>5],
+            'sort'=>[
+                'defaultOrder'=>[
+                    'id'=>SORT_DESC,
+                ],
+            ]
+        ]);
+        $query->orFilterWhere(['like', 'title',$param])
+//            ->orFilterWhere(['like', 'content', $param])
+            ->orFilterWhere(['like', 'tags', $param]);
+        return $dataProvider;
     }
 
 }

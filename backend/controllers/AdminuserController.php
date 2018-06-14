@@ -78,7 +78,7 @@ class AdminuserController extends CommonController
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup())
             {
-                return $this->redirect(['view', 'id' => $user->id]);
+                return $this->redirect(['index']);
             }
 
         }
