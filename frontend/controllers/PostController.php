@@ -55,7 +55,7 @@ class PostController extends Controller
         };
 
         $category_type = Category::findOne($category_id)->type;
-        $category = Category::findHotCategory(5);
+        $category = Category::findHotCategory(12);
         if ($category_type == Category::TYPE_POST){
             $searchModel = new PostSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
