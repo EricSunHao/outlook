@@ -117,6 +117,6 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getPhotoUrl()
     {
-        return "http://admin.outlook.com".$this->photo;
+        return "101.201.147.10：90/".$this->photo;
     }
 }
