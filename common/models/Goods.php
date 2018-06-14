@@ -117,6 +117,6 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getPhotoUrl()
     {
-        return "101.201.147.10：90/".$this->photo;
+        return "http://101.201.147.10:90".$this->photo;
     }
 }
