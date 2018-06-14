@@ -12,7 +12,7 @@ use yii\helpers\Html;
     <div class="right_redian_s">
         <a href="javascript:;" postid="<?= $model->id?>" class="right_redian_zan"><em><?= $model->laud_count;?></em>赞</a>
         <a href="javascript:;" postid="<?= $model->id?>" class="right_redian_cang"><em><?= $model->favorite_count;?></em>收藏</a>
-        <a href="javascript:;" class="right_redian_xiang">分享</a>
+        <a href="javascript:;" class="right_redian_xiang"></a>
         <span><?= date('Y-m-s',$model->update_time);?></span>
     </div>
 </li>
