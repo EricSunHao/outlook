@@ -2,17 +2,17 @@
 use yii\helpers\Html;
 
 ?>
-<li class="item_post">
+<li>
     <div class="right_redian_t">
-        <h2><?= Html::encode($model->title);?></h2>
-        <a href="<?= $model->url;?>">
-            <?= $model->beginning;?>
+        <h2><?= Html::encode($model->post->title);?></h2>
+        <a href="#">
+            <?= $model->post->beginning;?>
         </a>
     </div>
     <div class="right_redian_s">
-        <a href="javascript:;" class="right_redian_zan"><em>16</em>赞</a>
-        <a href="javascript:;" class="right_redian_cang"><em>12</em>收藏</a>
+        <a href="javascript:;" postid="<?= $model->post_id?>" class="right_redian_zan"><em><?= $model->post->laud_count;?></em>赞</a>
+        <a href="javascript:;" postid="<?= $model->post_id?>" class="right_redian_cang"><em><?= $model->post->favorite_count;?></em>收藏</a>
         <a href="javascript:;" class="right_redian_xiang"></a>
-        <span><?= date('Y-m-s H:i:s',$model->update_time);?></span>
+        <span><?= date('Y-m-s',$model->post->update_time);?></span>
     </div>
 </li>

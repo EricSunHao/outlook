@@ -17,7 +17,7 @@ $(function(){
 	// 		   r_con[2]="./大学排名.html";
 	//        $(".right").load(r_con[index]);
 	//    })
-    $(".right_redian_zan").on("click",function(){
+    $(document).delegate(".right_redian_zan","click",function(){
         var THIS = $(this);
         var postid = $(this).attr('postid');
         var count = parseInt($(this).children('em').html());
@@ -34,7 +34,7 @@ $(function(){
         });
 
     });
-    $(".right_redian_cang").on("click",function(){
+    $(document).delegate(".right_redian_cang","click",function(){
         var THIS = $(this);
         var postid = $(this).attr('postid');
         var count = parseInt($(this).children('em').html());

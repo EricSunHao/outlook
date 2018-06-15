@@ -4,11 +4,13 @@ namespace frontend\controllers;
 
 use common\models\Category;
 use common\models\Comment;
+use common\models\Favorite;
 use common\models\Order;
 use common\models\Tag;
 use Yii;
 use common\models\Post;
 use common\models\PostSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -42,7 +44,11 @@ class OrderController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model =new Favorite();
+        $dataProvider = $model->favoritePost();
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**

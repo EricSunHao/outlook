@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\data\ActiveDataProvider;
 
 /**
  * This is the model class for table "favorite".
@@ -61,5 +62,27 @@ class Favorite extends \yii\db\ActiveRecord
         {
             return false;
         }
+    }
+
+    public function getPost()
+    {
+        return $this->hasOne(Post::className(), ['id' => 'post_id']);
+    }
+
+    public function favoritePost()
+    {
+        $uid = Yii::$app->user->id;
+        $type = Favorite::TYPE_FAVORITE;
+        $query = Favorite::find()->where("type={$type} and user_id={$uid}");
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination'=>['pageSize'=>5],
+            'sort'=>[
+                'defaultOrder'=>[
+                    'add_time'=>SORT_DESC,
+                ],
+            ]
+        ]);
+        return $dataProvider;
     }
 }

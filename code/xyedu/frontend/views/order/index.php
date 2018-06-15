@@ -1,5 +1,6 @@
 <?php
-use frontend\components\HotTagsWidget;
+use kop\y2sp\ScrollPager;
+use yii\widgets\ListView;
 ?>
 <div class="con">
     <div class="con_dingdan">
@@ -38,50 +39,21 @@ use frontend\components\HotTagsWidget;
         </div>
         <div class="right_redian">
             <ul>
-                <li>
-                    <div class="right_redian_t">
-                        <h2>出国做访问学者需要做什么准备？</h2>
-                        <a href="#">
-                            如果是通过所在学校申请公派留学的话，各个学校的截止日期会不一样，但是国家的申请DDL会在三月份，所以在三月份之前就…
-                        </a>
-                    </div>
-                    <div class="right_redian_s">
-                        <a href="javascript:;" class="right_redian_zan"><em>16</em>赞</a>
-                        <a href="javascript:;" class="right_redian_cang"><em>12</em>收藏</a>
-                        <a href="javascript:;" class="right_redian_xiang"></a>
-                        <span>2018-05-30</span>
-                    </div>
-                </li>
 
-                <li>
-                    <div class="right_redian_t">
-                        <h2>出国做访问学者需要做什么准备？</h2>
-                        <a href="#">
-                            如果是通过所在学校申请公派留学的话，各个学校的截止日期会不一样，但是国家的申请DDL会在三月份，所以在三月份之前就…
-                        </a>
-                    </div>
-                    <div class="right_redian_s">
-                        <a href="javascript:;" class="right_redian_zan"><em>16</em>赞</a>
-                        <a href="javascript:;" class="right_redian_cang"><em>12</em>收藏</a>
-                        <a href="javascript:;" class="right_redian_xiang"></a>
-                        <span>2018-05-30</span>
-                    </div>
-                </li>
+                <?= ListView::widget([
+                    'dataProvider' => $dataProvider,//Yii2数据提供器
+                    'itemOptions'   => ['class' => 'item'],
+                    'itemView'      => '_listitem',
+                    'layout' => '{items}{pager}',
+                    'pager'         => [
+                        'class' => ScrollPager::className(),
+                        'triggerOffset' => 99,
+                        'triggerText'=>'点击加载更多',
+                        'noneLeftText' => '没有更多了~',
+                    ]
+                ]);
+                ?>
 
-                <li>
-                    <div class="right_redian_t">
-                        <h2>出国做访问学者需要做什么准备？</h2>
-                        <a href="#">
-                            如果是通过所在学校申请公派留学的话，各个学校的截止日期会不一样，但是国家的申请DDL会在三月份，所以在三月份之前就…
-                        </a>
-                    </div>
-                    <div class="right_redian_s">
-                        <a href="javascript:;" class="right_redian_zan"><em>16</em>赞</a>
-                        <a href="javascript:;" class="right_redian_cang"><em>12</em>收藏</a>
-                        <a href="javascript:;" class="right_redian_xiang"></a>
-                        <span>2018-05-30</span>
-                    </div>
-                </li>
             </ul>
         </div>
 
