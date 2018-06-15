@@ -43,7 +43,8 @@ class SearchController extends Controller
     public function actionIndex()
     {
         $tags = Tag::findHotTags(8);
-        return $this->render('index',['tags' => $tags]);
+        $keyword = SearchHistory::findSearchHistory(5);
+        return $this->render('index',['tags' => $tags,'keyword' => $keyword]);
     }
 
     /**

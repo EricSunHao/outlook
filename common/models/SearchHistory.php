@@ -59,4 +59,20 @@ class SearchHistory extends \yii\db\ActiveRecord
             return false;
         }
     }
+
+    /**
+     * @param $limit int 获取的关键词数量
+     * @return array
+     */
+    public static function findSearchHistory($limit=10)
+    {
+        $uid = Yii::$app->user->id;
+        $models=SearchHistory::find()->where("uid=$uid")->groupBy('keyword')->orderBy('add_time desc')->limit($limit)->all();
+        $keywords=array();
+        foreach ($models as $model)
+        {
+            $keywords[]=$model->keyword;
+        }
+        return $keywords;
+    }
 }
