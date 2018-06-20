@@ -76,6 +76,9 @@ class SearchController extends Controller
         $history->keyword = $params;
         $history->save();
 
+        //查看类似搜索关键词
+        $keywords = SearchHistory::findSameKeyword($params);
+
         $dataProvider = $searchModel->searchMany($params);
         $searchCount = $dataProvider->getTotalCount();
 
@@ -84,6 +87,7 @@ class SearchController extends Controller
             'dataProvider' => $dataProvider,
             'searchCount' => $searchCount,
             'searchInput' => $searchInput,
+            'keywords' => $keywords,
         ]);
 
     }

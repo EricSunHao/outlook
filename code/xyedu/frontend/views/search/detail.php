@@ -49,7 +49,7 @@ use yii\helpers\Url;
         </div>
         <div class="con_sousuo_list_b">
             <p>
-                搜索过“访问学者”的用户，还搜索“<span>面签</span>”、“<span>签证指导</span>”
+                搜索过“<?=$searchInput?>”的用户，还搜索<?=$keywords?>
             </p>
         </div>
 

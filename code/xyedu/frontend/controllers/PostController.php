@@ -124,6 +124,7 @@ class PostController extends Controller
             $commentModel = '';
         }
 
+        $sameQuery = $model->samePost();
 
         //step3.传数据给视图渲染
 
@@ -133,6 +134,7 @@ class PostController extends Controller
             'comments'=>$recentComments,
             'commentModel'=>$commentModel,
             'added'=>$this->added,
+            'query' => $sameQuery,
         ]);
 
     }
