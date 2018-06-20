@@ -75,4 +75,42 @@ class SearchHistory extends \yii\db\ActiveRecord
         }
         return $keywords;
     }
+
+    /**
+     * @param $param string 获取相近的搜索关键词
+     * @return string
+     */
+    public static function findSameKeyword($param='')
+    {
+        $models=SearchHistory::find()->where(['like', 'keyword',$param])->groupBy('keyword')->orderBy('add_time desc')->limit(3)->all();
+        $keywords=array();
+        foreach ($models as $model)
+        {
+            $keywords[]=$model->keyword;
+        }
+        foreach ($keywords as $k=>$v){
+            if ($param == $v) unset($keywords[$k]);
+        }
+
+        if (empty($keywords)){
+            $models=SearchHistory::find()->groupBy('keyword')->orderBy('add_time desc')->limit(2)->all();
+            $keywords=array();
+            foreach ($models as $model)
+            {
+                $keywords[]=$model->keyword;
+            }
+            foreach ($keywords as $k=>$v){
+                if ($param == $v) unset($keywords[$k]);
+            }
+        }
+
+        $String='';
+
+        foreach ($keywords as $keyword)
+        {
+            $url = Yii::$app->urlManager->createUrl(['/search/detail','keywords'=>$keyword]);
+            $String.=' "<a href="'.$url.'" style="color:#ff5501">'.$keyword.'</a>"';
+        }
+        return $String;
+    }
 }

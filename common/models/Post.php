@@ -170,6 +170,7 @@ class Post extends \yii\db\ActiveRecord
             ->where('status=:status',[':status'=>2])->orderBy('id DESC');
     }
 
+    //搜索更多 标题关键词综合搜索
     public function searchMany($param)
     {
         $query = Post::find();
@@ -186,6 +187,21 @@ class Post extends \yii\db\ActiveRecord
 //            ->orFilterWhere(['like', 'content', $param])
             ->orFilterWhere(['like', 'tags', $param]);
         return $dataProvider;
+    }
+
+    //查找类似的文章
+    public function samePost()
+    {
+        $query = Post::find();
+        $tags = Tag::string2array($this->tags);
+        foreach ($tags as $tag){
+            $query->orFilterWhere(['like', 'tags', $tag]);
+        }
+
+        $data = $query->limit(3)->all();
+
+
+        return $data;
     }
 
 }

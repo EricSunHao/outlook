@@ -41,8 +41,17 @@ use common\models\Comment;
             <p>
                 阅读过本文的用户，还阅读过：
             </p>
-            <a href="#">1.访问学者语言如何通过考试？（82%用户）</a>
-            <a href="#">2.访问学者面试应该如何准备？（69%用户）</a>
+<!--            <a href="#">1.访问学者语言如何通过考试？（82%用户）</a>-->
+<!--            <a href="#">2.访问学者面试应该如何准备？（69%用户）</a>-->
+            <?php
+            foreach ($query as $k=>$v){
+                $num = (int)$k+1;
+                if ($v->id != $model->id){
+                    echo "<a href='{$v->url}'>$num.$v->title</a>";
+                }
+            }
+            ?>
+
         </div>
     </div>
 </div>
