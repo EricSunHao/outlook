@@ -24,16 +24,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ranking')->textInput() ?>
 
-<!--    --><?//= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
-
-<!--    --><?//= $form->field($model, 'status')->textInput() ?>
-
-<!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
+    <?= $form->field($model,'status')
+        ->dropDownList([1=>'大学排名',
+            2=>'医院排名']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '新增' : '修改', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
 </div>

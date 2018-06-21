@@ -27,7 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-'type',
+            [
+                'attribute'=>'type',
+                'value'=>'type0',
+                'filter'=>\common\models\Category::getAllType()
+            ],
             'hot',
             ['class' => 'yii\grid\ActionColumn'],
         ],

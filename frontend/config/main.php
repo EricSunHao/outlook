@@ -44,6 +44,7 @@ return [
             'suffix' => '.html',
             'rules' => [
                 '<controller:\w+>/<id:\d+>'=>'<controller>/detail',
+                '<controller:\w+>/<page:\d+>/<per-page:\d+>'=>'<controller>/index',
 //                'post/<cid:\d+>/<action:\w+>' => 'post/<action>'
             ],
         ],

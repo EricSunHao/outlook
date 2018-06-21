@@ -69,6 +69,16 @@ class PostController extends Controller
                 ],
                 'pagination'=>['pageSize'=>10],
             ]);
+        }elseif($category_type == Category::TYPE_HOSPITAL){
+            $dataProvider = new ActiveDataProvider([
+                'query'=>University::find()->where("status=2"),
+                'sort'=>[
+                    'defaultOrder'=>[
+                        'ranking'=>SORT_ASC,
+                    ],
+                ],
+                'pagination'=>['pageSize'=>10],
+            ]);
         }
 
         return $this->render('index', [
