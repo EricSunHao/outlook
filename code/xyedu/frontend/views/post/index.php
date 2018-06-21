@@ -13,7 +13,14 @@ use yii\widgets\Pjax;
             <?php foreach($category as $cg): ?>
 
                 <li <? if ($cg->id==$category_id) echo "class='on'";?>>
-                    <?= Html::a($cg->name,['/post/index','PostSearch[category_id]'=>$cg->id]) ?>
+                    <?= Html::a($cg->name, '/post/index.html', [
+                        'data' => [
+                            'method' => 'post',
+                            'params' => [
+                                'PostSearch[category_id]'=>$cg->id
+                            ]
+                        ]
+                    ])?>
                 </li>
 
             <?php endforeach;?>
