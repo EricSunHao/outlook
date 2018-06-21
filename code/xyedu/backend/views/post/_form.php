@@ -27,6 +27,7 @@ AppAsset::addScript($this,"/css/umeditor/lang/zh-cn/zh-cn.js");
     <?= $form->field($model,'category_id')
         ->dropDownList(\common\models\Category::find()
             ->select(['name','id'])
+            ->where(['type'=>1])
             ->indexBy('id')
             ->column(),['prompt'=>'请选择分类']
         )

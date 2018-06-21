@@ -41,7 +41,7 @@ AppAsset::register($this);
             ['label' => '分类管理', 'url' => ['/category/index']],
             ['label' => '文章管理', 'url' => ['/post/index']],
 //        ['label' => '教授信息', 'url' => ['/professor/index']],
-            ['label' => '大学信息', 'url' => ['/university/index']],
+            ['label' => '排名信息', 'url' => ['/university/index']],
             ['label' => '服务信息', 'url' => ['/goods/index']],
             ['label' => '订单', 'url' => ['/order/index']],
 //        ['label' => '评论管理', 'url' => ['/comment/index']],

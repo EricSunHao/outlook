@@ -27,7 +27,7 @@ AppAsset::addScript($this,"/css/umeditor/lang/zh-cn/zh-cn.js");
 
     <?= $form->field($model,'status')
         ->dropDownList([1=>'上架',
-            0=>'待上架']) ?>
+            2=>'待上架']) ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 

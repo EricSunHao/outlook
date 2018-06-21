@@ -36,9 +36,9 @@ class University extends \yii\db\ActiveRecord
         return [
             [['name_cn', 'name_en', 'content','ranking'], 'required'],
             [['content'], 'string'],
-            [['name'], 'string', 'max' => 128],
-            [['english_name'], 'string', 'max' => 155],
-            [['ranking'], 'integer'],
+            [['name_cn'], 'string', 'max' => 128],
+            [['name_en'], 'string', 'max' => 155],
+            [['ranking','status'], 'integer'],
 //            [['logo'], 'string', 'max' => 255],
         ];
     }
@@ -50,12 +50,12 @@ class University extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name_cn' => '学校名称',
-            'name_en' => '学校英文名称',
-            'content' => '学校简介',
+            'name_cn' => '名称',
+            'name_en' => '英文名称',
+            'content' => '简介',
             'logo' => 'Logo',
             'ranking' => '排名',
-            'status' => '展示状态',
+            'status' => '排名分类',
             'create_time' => '创建时间',
         ];
     }
@@ -76,7 +76,6 @@ class University extends \yii\db\ActiveRecord
             if($insert)
             {
                 $this->create_time = time();
-                $this->status = 1;
             }
             return true;
         }
@@ -100,5 +99,16 @@ class University extends \yii\db\ActiveRecord
         return Yii::$app->urlManager->createUrl(
             ['post/university','id'=>$this->id]
         );
+    }
+
+    public function getStatusName()
+    {
+        if ($this->status == 1)
+        {
+            return '大学排名';
+        }else{
+            return '医院排名';
+        }
+
     }
 }

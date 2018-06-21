@@ -13,7 +13,9 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'type')->textInput() ?>
+<!--    --><?//= $form->field($model, 'type')->textInput() ?>
+    <?= $form->field($model,'type')
+        ->dropDownList(\common\models\Category::getAllType(),['prompt'=>'请选择状态']) ?>
     <?= $form->field($model, 'hot')->textInput() ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

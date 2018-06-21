@@ -5,7 +5,7 @@ use yii\helpers\Html;
 <li>
     <div class="right_redian_t">
         <h2><?= Html::encode($model->post->title);?></h2>
-        <a href="#">
+        <a href="<?= $model->post->url;?>">
             <?= $model->post->beginning;?>
         </a>
     </div>

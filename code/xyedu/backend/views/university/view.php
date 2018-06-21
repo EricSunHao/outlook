@@ -7,8 +7,8 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model common\models\University */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => '大学信息', 'url' => ['index']];
+$this->title = $model->name_cn;
+$this->params['breadcrumbs'][] = ['label' => '排名信息', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="university-view">
@@ -44,6 +44,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'create_time',
                 'value'=>date("Y-m-d H:i:s",$model->create_time),
+            ],
+            [
+                'attribute'=>'status',
+                'value'=>$model->getStatusName(),
             ],
         ],
     ]) ?>

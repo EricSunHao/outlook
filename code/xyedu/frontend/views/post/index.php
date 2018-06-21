@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Category;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\helpers\Html;
@@ -27,7 +28,7 @@ use yii\widgets\Pjax;
         </ul>
     </div>
 
-    <?php if ($category_type == 2){ ?>
+    <?php if ($category_type == Category::TYPE_SCHOOL){ ?>
     <div class="right">
         <div class="right_daxue">
             <ul>
@@ -49,7 +50,29 @@ use yii\widgets\Pjax;
     </div>
     <?php }?>
 
-    <?php if ($category_type == 1){ ?>
+    <?php if ($category_type == Category::TYPE_HOSPITAL){ ?>
+        <div class="right">
+            <div class="right_daxue">
+                <ul>
+                    <?= ListView::widget([
+                        'dataProvider' => $dataProvider,//Yii2数据提供器
+                        'itemOptions'   => ['class' => 'item'],
+                        'itemView'      => '_schoolitem',
+                        'layout' => '{items}{pager}',
+                        'pager'         => [
+                            'class' => ScrollPager::className(),
+                            'triggerOffset' => 99,
+                            'triggerText'=>'点击加载更多',
+                            'noneLeftText' => '没有更多了~',
+                        ]
+                    ]);
+                    ?>
+                </ul>
+            </div>
+        </div>
+    <?php }?>
+
+    <?php if ($category_type == Category::TYPE_POST){ ?>
     <div class="right">
         <div class="right_redian">
             <ul>
