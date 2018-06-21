@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
-        $getParams = Yii::$app->request->get();
+        $getParams = Yii::$app->request->post();
         if (empty($getParams) || empty($getParams['PostSearch']))
         {$category_id=1;}else{
             $category_id = $getParams['PostSearch']['category_id'];
