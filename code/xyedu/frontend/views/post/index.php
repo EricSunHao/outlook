@@ -1,11 +1,9 @@
 <?php
 
 use common\models\Category;
-use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\helpers\Html;
 use kop\y2sp\ScrollPager;
-use yii\widgets\Pjax;
 ?>
 
 <div class="con">
@@ -63,7 +61,7 @@ use yii\widgets\Pjax;
                             'class' => ScrollPager::className(),
                             'triggerOffset' => 99,
                             'triggerText'=>'点击加载更多',
-                            'noneLeftText' => '没有更多了~',
+                            'noneLeftText' => '',
                         ]
                     ]);
                     ?>
@@ -85,7 +83,7 @@ use yii\widgets\Pjax;
                             'class' => ScrollPager::className(),
                             'triggerOffset' => 99,
                             'triggerText'=>'点击加载更多',
-                            'noneLeftText' => '没有更多了~',
+                            'noneLeftText' => '',
                     ]
                 ]);
                 ?>
