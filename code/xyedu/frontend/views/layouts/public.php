@@ -31,24 +31,46 @@ AppAsset::register($this);
 <?php echo $content;?>
 
 <div class="footer footer1">
+    <?php $name = Yii::$app->controller->id; ?>
     <ul>
         <li>
+            <?php if ($name=='post'){?>
             <a href="<?=Url::to(Yii::$app->homeUrl) ?>" class="on">
                 <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img1_2.png" />
                 <span>首页</span>
             </a>
+            <?php }else{ ?>
+            <a href="<?=Url::to(Yii::$app->homeUrl) ?>">
+                <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img1.png" />
+                <span>首页</span>
+            </a>
+            <?php } ?>
         </li>
         <li>
-            <a href="<?=Url::to('/goods/index.html') ?>">
-                <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img2.png" />
-                <span>服务</span>
-            </a>
+            <?php if ($name=='goods'){?>
+                <a href="<?=Url::to('/goods/index.html') ?>" class="on">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img2_2.png" />
+                    <span>服务</span>
+                </a>
+            <?php }else{ ?>
+                <a href="<?=Url::to('/goods/index.html') ?>">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img2.png" />
+                    <span>服务</span>
+                </a>
+            <?php } ?>
         </li>
         <li>
-            <a href="<?=Url::to('/order/index.html') ?>">
-                <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img3.png" />
-                <span>我</span>
-            </a>
+            <?php if ($name=='order'){?>
+                <a href="<?=Url::to('/order/index.html') ?>" class="on">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img3_2.png" />
+                    <span>我</span>
+                </a>
+            <?php }else{ ?>
+                <a href="<?=Url::to('/order/index.html') ?>">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/wx/img/footer_img3.png" />
+                    <span>我</span>
+                </a>
+            <?php } ?>
         </li>
 
     </ul>

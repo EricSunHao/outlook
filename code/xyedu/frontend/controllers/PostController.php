@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\models\Category;
 use common\models\Comment;
 use common\models\Favorite;
+use common\models\PostRecords;
 use common\models\Tag;
 use common\models\University;
 use Yii;
@@ -111,39 +112,43 @@ class PostController extends Controller
     {
         //step1. 准备数据模型
         $model = $this->findModel($id);
-        $tags=Tag::findTagWeights();
-        $recentComments=Comment::findRecentComments();
-
-        if (isset(Yii::$app->user->id)){
-            $userMe = User::findOne(Yii::$app->user->id);
-            $commentModel = new Comment();
-            $commentModel->email = $userMe->email;
-            $commentModel->userid = $userMe->id;
-
-            //step2. 当评论提交时，处理评论
-            if($commentModel->load(Yii::$app->request->post()))
-            {
-                $commentModel->status = 1; //新评论默认状态为 pending
-                $commentModel->post_id = $id;
-                if($commentModel->save())
-                {
-                    $this->added=1;
-                }
-            }
-        }else{
-            $commentModel = '';
-        }
+//        $tags=Tag::findTagWeights();
+//        $recentComments=Comment::findRecentComments();
+//
+//        if (isset(Yii::$app->user->id)){
+//            $userMe = User::findOne(Yii::$app->user->id);
+//            $commentModel = new Comment();
+//            $commentModel->email = $userMe->email;
+//            $commentModel->userid = $userMe->id;
+//
+//            //step2. 当评论提交时，处理评论
+//            if($commentModel->load(Yii::$app->request->post()))
+//            {
+//                $commentModel->status = 1; //新评论默认状态为 pending
+//                $commentModel->post_id = $id;
+//                if($commentModel->save())
+//                {
+//                    $this->added=1;
+//                }
+//            }
+//        }else{
+//            $commentModel = '';
+//        }
 
         $sameQuery = $model->samePost();
+
+        //保存用户浏览记录
+        $post_record = new PostRecords();
+        $post_record->addRecord($id);
 
         //step3.传数据给视图渲染
 
         return $this->render('detail',[
             'model'=>$model,
-            'tags'=>$tags,
-            'comments'=>$recentComments,
-            'commentModel'=>$commentModel,
-            'added'=>$this->added,
+//            'tags'=>$tags,
+//            'comments'=>$recentComments,
+//            'commentModel'=>$commentModel,
+//            'added'=>$this->added,
             'query' => $sameQuery,
         ]);
 
