@@ -41,7 +41,7 @@ use yii\widgets\Pjax;
                         'class' => ScrollPager::className(),
                         'triggerOffset' => 99,
                         'triggerText'=>'点击加载更多',
-                        'noneLeftText' => '没有更多了~',
+                        'noneLeftText' => '',
                     ]
                 ]);
                 ?>
