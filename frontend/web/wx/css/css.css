@@ -278,12 +278,20 @@ body {
   background:url(../img/zan.png) center left no-repeat;
   background-size:1.5rem auto;
 }
+.right_redian_zan1{
+    background:url(../img/zan1.png) center left no-repeat;
+    background-size:1.5rem auto;
+}
 .right_redian_s .right_redian_zan em{
   padding-left:1.2rem;
 }
 .right_redian_cang{
   background:url(../img/cang.png) center left no-repeat;
   background-size:1.5rem auto;
+}
+.right_redian_cang1{
+    background:url(../img/cang1.png) center left no-repeat;
+    background-size:1.5rem auto;
 }
 
 .right_redian_s a.right_redian_xiang{
