@@ -112,6 +112,16 @@ class PostController extends Controller
     {
         //step1. 准备数据模型
         $model = $this->findModel($id);
+
+        //缓存当前文章ID 为浏览记录作准备
+        $cache = Yii::$app->cache;
+        $next_post_id = $cache->get('next_post_id');
+        if (!empty($next_post_id)) {
+            //保存本条浏览记录
+            if ($id !== $next_post_id ){
+                $model->setReadHistory($next_post_id);
+            }
+        }
 //        $tags=Tag::findTagWeights();
 //        $recentComments=Comment::findRecentComments();
 //
@@ -134,8 +144,11 @@ class PostController extends Controller
 //        }else{
 //            $commentModel = '';
 //        }
+        $cacheData = $id;
+        $cache->set('next_post_id', $cacheData);
+//        $sameQuery = $model->samePost();
+        $sameQuery = $model->getReadHistory();
 
-        $sameQuery = $model->samePost();
 
         //保存用户浏览记录
         $post_record = new PostRecords();

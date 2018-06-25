@@ -85,4 +85,15 @@ class Favorite extends \yii\db\ActiveRecord
         ]);
         return $dataProvider;
     }
+
+    static public function getFavStatus($type = Favorite::TYPE_FAVORITE,$post_id = 0)
+    {
+        $uid = Yii::$app->user->id;
+        $data = Favorite::find()->where("type={$type} and user_id={$uid} and post_id = {$post_id}")->one();
+        if (empty($data)){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }

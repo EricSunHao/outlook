@@ -24,16 +24,39 @@ $(function(){
         $.post("/post/laud.html",{id:postid},function(result){
         	if (result==1){
         	    var count1 = parseInt(count+1);
-        	    THIS.children('em').html(count1)
+        	    THIS.children('em').html(count1);
+                THIS.addClass('right_redian_zan1').removeClass('right_redian_zan');
 			} else if (result==2){
                 var count2 = parseInt(count-1);
-                THIS.children('em').html(count2)
+                THIS.children('em').html(count2);
+                THIS.addClass('right_redian_zan').removeClass('right_redian_zan1');
 			} else {
                 if(confirm(result))location.href="/site/login.html"
 			}
         });
 
     });
+
+    $(document).delegate(".right_redian_zan1","click",function(){
+        var THIS = $(this);
+        var postid = $(this).attr('postid');
+        var count = parseInt($(this).children('em').html());
+        $.post("/post/laud.html",{id:postid},function(result){
+            if (result==1){
+                var count1 = parseInt(count+1);
+                THIS.children('em').html(count1);
+                THIS.addClass('right_redian_zan1').removeClass('right_redian_zan');
+            } else if (result==2){
+                var count2 = parseInt(count-1);
+                THIS.children('em').html(count2);
+                THIS.addClass('right_redian_zan').removeClass('right_redian_zan1');
+            } else {
+                if(confirm(result))location.href="/site/login.html"
+            }
+        });
+
+    });
+
     $(document).delegate(".right_redian_cang","click",function(){
         var THIS = $(this);
         var postid = $(this).attr('postid');
@@ -41,10 +64,31 @@ $(function(){
         $.post("/post/favorite.html",{id:postid},function(result){
             if (result==1){
                 var count1 = parseInt(count+1);
-                THIS.children('em').html(count1)
+                THIS.children('em').html(count1);
+                THIS.addClass('right_redian_cang1').removeClass('right_redian_cang');
             } else if (result==2){
                 var count2 = parseInt(count-1);
-                THIS.children('em').html(count2)
+                THIS.children('em').html(count2);
+                THIS.addClass('right_redian_cang').removeClass('right_redian_cang1');
+            } else {
+                if(confirm(result))location.href="/site/login.html"
+            }
+        });
+    })
+
+    $(document).delegate(".right_redian_cang1","click",function(){
+        var THIS = $(this);
+        var postid = $(this).attr('postid');
+        var count = parseInt($(this).children('em').html());
+        $.post("/post/favorite.html",{id:postid},function(result){
+            if (result==1){
+                var count1 = parseInt(count+1);
+                THIS.children('em').html(count1);
+                THIS.addClass('right_redian_cang1').removeClass('right_redian_cang');
+            } else if (result==2){
+                var count2 = parseInt(count-1);
+                THIS.children('em').html(count2);
+                THIS.addClass('right_redian_cang').removeClass('right_redian_cang1');
             } else {
                 if(confirm(result))location.href="/site/login.html"
             }

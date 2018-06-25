@@ -20,6 +20,7 @@ use yii\data\ActiveDataProvider;
  * @property int $category_id
  * @property int $laud_count
  * @property int $favorite_count
+ * @property string $next_post
  *
  * @property Comment[] $comments
  * @property Adminuser $author
@@ -69,6 +70,13 @@ class Post extends \yii\db\ActiveRecord
             'laud_count' => '赞',
             'favorite_count' => '收藏',
         ];
+    }
+
+    public function attributes ()
+    {
+        $attributes = parent::attributes();
+        $attributes[] = 'per';
+        return $attributes;
     }
 
     /**
@@ -189,7 +197,7 @@ class Post extends \yii\db\ActiveRecord
         return $dataProvider;
     }
 
-    //查找类似的文章
+    //查找类似的文章 根据文章标签推荐
     public function samePost()
     {
         $query = Post::find();
@@ -202,6 +210,50 @@ class Post extends \yii\db\ActiveRecord
 
 
         return $data;
+    }
+
+    //保存文章浏览记录 相关阅读推荐
+    public function setReadHistory($id)
+    {
+        $post_ids = $this->next_post;
+        if (empty($post_ids)){
+            $post_arr = [$id=>1];
+            $post_str = json_encode($post_arr);
+        }else{
+            $post_str = $this->dealReadHistory(json_decode($post_ids,true),$id);
+        }
+
+        $this->next_post=$post_str;
+        $this->save();
+
+    }
+    private function dealReadHistory($data,$id){
+        if (empty($data[$id])){
+            $data[$id]=1;
+        }else{
+            $data[$id]=(int)$data[$id]+1;
+        }
+
+        return json_encode($data,true);
+    }
+
+    //获取 相关阅读推荐 根据浏览记录推荐
+    public function getReadHistory()
+    {
+        $post_ids = $this->next_post;
+        $model = '';
+        if (!empty($post_ids)){
+            $post_arr = json_decode($post_ids,true);
+            $sum = array_sum($post_arr);
+            arsort($post_arr);
+            $arr_new = array_slice($post_arr,0,2,true);
+            foreach ($arr_new as $pid=>$hot){
+                $postModel = Post::findOne($pid);
+                $postModel->setAttributes(array('per'=>ceil($hot/$sum*100)),false);
+                $model[] = $postModel;
+            }
+        }
+        return $model;
     }
 
 }
