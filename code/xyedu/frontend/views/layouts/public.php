@@ -14,6 +14,15 @@ AppAsset::register($this);
     <meta name="wap-font-scale" content="no">
     <?php $this->head() ?>
     <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/wx/css/css.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b081c308763e2f27fd3aee1839d746b9";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 <?php $this->beginBody() ?>

@@ -16,6 +16,16 @@ AppAsset::register($this);
     <script src="<?= Yii::$app->request->baseUrl ?>/wx/js/jquery-2.1.4.js"></script>
     <script src="<?= Yii::$app->request->baseUrl ?>/wx/js/ind.js"></script>
     <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/wx/css/css.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b081c308763e2f27fd3aee1839d746b9";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
